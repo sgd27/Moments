@@ -1,5 +1,5 @@
 //
-//  ProfileImage.swift
+//  AvatarImage.swift
 //  Moments
 //
 //  Created by 施国栋 on 2020/4/13.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ProfileImage: View {
+struct AvatarImage: View {
     @ObservedObject var imageLoader: ImageLoader
 
     var body: some View {
@@ -17,12 +17,12 @@ struct ProfileImage: View {
                 Image(uiImage: self.imageLoader.image!)
                     .resizable()
                     .renderingMode(.original)
-                    .frame(height: 200)
+                    .frame(width: 40, height: 40)
 
             } else {
                 Rectangle()
                     .foregroundColor(.gray)
-                    .frame(height: 200)
+                    .frame(width: 40, height: 40)
             }
         }
     }

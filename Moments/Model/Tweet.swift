@@ -10,7 +10,8 @@ import Foundation
 
 // MARK: - Tweet
 
-struct Tweet: Codable {
+struct Tweet: Codable, Identifiable {
+    let id = UUID()
     let content: String?
     let images: [TweetImage]?
     let sender: Sender?
