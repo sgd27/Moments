@@ -18,3 +18,8 @@ struct User: Codable {
         case avatar, nick, username
     }
 }
+
+let sampleUser = User(profileImage: "https://thoughtworks-mobile-2018.herokuapp.com/images/user/profile-image.jpg",
+                      avatar: "https://thoughtworks-mobile-2018.herokuapp.com/images/user/avatar.png",
+                      nick: "Huan Huan",
+                      username: "hengzeng")

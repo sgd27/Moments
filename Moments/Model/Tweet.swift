@@ -12,7 +12,7 @@ import Foundation
 
 struct Tweet: Codable {
     let content: String?
-    let images: [Image]?
+    let images: [TweetImage]?
     let sender: Sender?
     let comments: [Comment]?
     let error, unknownError: String?
@@ -39,6 +39,6 @@ struct Sender: Codable {
 
 // MARK: - Image
 
-struct Image: Codable {
+struct TweetImage: Codable {
     let url: String
 }
