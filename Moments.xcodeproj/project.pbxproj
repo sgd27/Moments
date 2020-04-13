@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F10F015924431A7C0054F14C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F015824431A7C0054F14C /* APIService.swift */; };
+		F166FA30244405F200D5DA87 /* TweetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166FA2F244405F200D5DA87 /* TweetRow.swift */; };
 		F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201442441A2C000251B94 /* AppDelegate.swift */; };
 		F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201462441A2C100251B94 /* SceneDelegate.swift */; };
 		F1A201492441A2C100251B94 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201482441A2C100251B94 /* MomentsView.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		F10F015824431A7C0054F14C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F166FA2F244405F200D5DA87 /* TweetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRow.swift; sourceTree = "<group>"; };
 		F1A201412441A2C000251B94 /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A201442441A2C000251B94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A201462441A2C100251B94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				F1F5122B2443A65A0000CFAF /* Shared */,
 				F1F512282443889D0000CFAF /* Image */,
 				F1A201482441A2C100251B94 /* MomentsView.swift */,
+				F166FA2F244405F200D5DA87 /* TweetRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			files = (
 				F1F5122A244388F70000CFAF /* ProfileImage.swift in Sources */,
 				F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */,
+				F166FA30244405F200D5DA87 /* TweetRow.swift in Sources */,
 				F1F5122F2443B5CC0000CFAF /* AvatarImage.swift in Sources */,
 				F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */,
 				F1F51227244381730000CFAF /* ImageService.swift in Sources */,

@@ -35,16 +35,15 @@ struct MomentsView: View {
                 }.padding(.top, -40)
 
                 ForEach(tweets.filter { $0.content != nil || $0.images != nil }) { item in
-                    HStack {
-                        AvatarImage(imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: self.user.avatar)))
-                        Text(item.content ?? "")
-                    }
+                    TweetRow(tweet: item)
                 }
             }
-            .navigationBarTitle("朋友圈", displayMode: .inline)
+            .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(trailing: cameraButton)
             .background(NavigationConfigurator { navigationController in
-                navigationController.navigationBar.standardAppearance.configureWithTransparentBackground()
+                let navBar = navigationController.navigationBar
+                navBar.standardAppearance.configureWithTransparentBackground()
+//                navigationBar.titleTextAttributes = [.foregroundColor: UIColor.]
 
                        })
         }

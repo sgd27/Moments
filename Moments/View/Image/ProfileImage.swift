@@ -21,7 +21,7 @@ struct ProfileImage: View {
 
             } else {
                 Rectangle()
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .frame(height: 200)
             }
         }

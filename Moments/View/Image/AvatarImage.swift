@@ -21,7 +21,7 @@ struct AvatarImage: View {
 
             } else {
                 Rectangle()
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .frame(width: 40, height: 40)
             }
         }
