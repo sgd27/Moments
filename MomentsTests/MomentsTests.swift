@@ -6,8 +6,9 @@
 //  Copyright © 2020 施国栋. All rights reserved.
 //
 
-@testable import Moments
 import XCTest
+
+@testable import Moments
 
 class MomentsTests: XCTestCase {
     override func setUpWithError() throws {

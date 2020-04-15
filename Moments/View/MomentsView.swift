@@ -22,15 +22,18 @@ struct MomentsView: View {
     var body: some View {
         NavigationView {
             List {
-                ProfileImage(imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: user.profileImage)))
-                    .listRowInsets(EdgeInsets())
-                    .padding(0)
-                    .padding(.top, -100)
+                ProfileImage(
+                    imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: user.profileImage))
+                )
+                .listRowInsets(EdgeInsets())
+                .padding(0)
+                .padding(.top, -100)
                 HStack {
                     Spacer()
                     HStack {
                         Text(user.nick)
-                        AvatarImage(imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: self.user.avatar)))
+                        AvatarImage(
+                            imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: self.user.avatar)))
                     }
                 }.padding(.top, -40)
 
@@ -40,16 +43,18 @@ struct MomentsView: View {
             }
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(trailing: cameraButton)
-            .background(NavigationConfigurator { navigationController in
-                let navBar = navigationController.navigationBar
-                navBar.standardAppearance.configureWithTransparentBackground()
-//                navigationBar.titleTextAttributes = [.foregroundColor: UIColor.]
+            .background(
+                NavigationConfigurator { navigationController in
+                    let navBar = navigationController.navigationBar
+                    navBar.standardAppearance.configureWithTransparentBackground()
+                    //                navigationBar.titleTextAttributes = [.foregroundColor: UIColor.]
 
-                       })
+        })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
-            APIService.shared.GET(endpoint: .tweets, params: nil) { (result: Result<[Tweet], APIService.APIError>) in
+            APIService.shared.GET(endpoint: .tweets, params: nil) {
+                (result: Result<[Tweet], APIService.APIError>) in
                 switch result {
                 case let .success(response):
                     self.tweets = response

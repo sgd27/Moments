@@ -16,8 +16,10 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
         UIViewController()
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController,
-                                context _: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+    func updateUIViewController(
+        _ uiViewController: UIViewController,
+        context _: UIViewControllerRepresentableContext<NavigationConfigurator>
+    ) {
         if let navigationController = uiViewController.navigationController {
             configure(navigationController)
         }

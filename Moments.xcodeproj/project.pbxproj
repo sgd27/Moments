@@ -67,6 +67,7 @@
 		F1F51229244388F70000CFAF /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		F1F5122C2443A6880000CFAF /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		F1F5122E2443B5CC0000CFAF /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		F1F51230244733910000CFAF /* Moments.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moments.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +138,7 @@
 		F1A201432441A2C000251B94 /* Moments */ = {
 			isa = PBXGroup;
 			children = (
+				F1F51230244733910000CFAF /* Moments.entitlements */,
 				F1D98C7C24432C1000CC8CE2 /* Model */,
 				F10F01172442002E0054F14C /* View */,
 				F10F015724431A1D0054F14C /* Services */,
@@ -559,8 +561,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Moments/Moments.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Moments/Preview Content\"";
+				DEVELOPMENT_TEAM = 8X7DZDJ78G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Moments/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -570,6 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shiguodong.Moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -579,8 +584,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Moments/Moments.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Moments/Preview Content\"";
+				DEVELOPMENT_TEAM = 8X7DZDJ78G;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Moments/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -590,6 +597,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shiguodong.Moments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

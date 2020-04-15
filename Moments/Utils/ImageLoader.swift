@@ -28,7 +28,7 @@ public class ImageLoaderCache {
     }
 }
 
-public final class ImageLoader: ObservableObject {
+public class ImageLoader: ObservableObject {
     public let url: URL?
 
     public var objectWillChange: AnyPublisher<UIImage?, Never> = Publishers
@@ -41,11 +41,14 @@ public final class ImageLoader: ObservableObject {
     public init(url: URL?) {
         self.url = url
 
-        objectWillChange = $image.handleEvents(receiveSubscription: { [weak self] _ in
-            self?.loadImage()
-        }, receiveCancel: { [weak self] in
-            self?.cancellable?.cancel()
-        }).eraseToAnyPublisher()
+        objectWillChange = $image.handleEvents(
+            receiveSubscription: { [weak self] _ in
+                self?.loadImage()
+            },
+            receiveCancel: { [weak self] in
+                self?.cancellable?.cancel()
+            }
+        ).eraseToAnyPublisher()
     }
 
     private func loadImage() {
