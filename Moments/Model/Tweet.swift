@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Tweet
 
 struct Tweet: Codable, Identifiable {
-    let id = UUID()
+    var id: UUID { UUID() }
     let content: String?
     let images: [TweetImage]?
     let sender: Sender?

@@ -11,7 +11,7 @@ import SwiftUI
 struct TweetRow: View {
     var tweet: Tweet
     var body: some View {
-        HStack(alignment: .top) {
+        HStack(alignment: .top, spacing: 10) {
             AvatarImage(
                 imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: tweet.sender!.avatar)))
             VStack(alignment: .leading) {
@@ -19,20 +19,10 @@ struct TweetRow: View {
                 Text(tweet.content ?? "").font(.body)
                 ImagesGrid(imageUrls: tweet.images?.map { $0.url } ?? [])
             }
+            .padding(.leading, 5)
         }
     }
 }
-
-// struct ImagesRow: View {
-//    var imageUrls: [String]
-//    var body: some View {
-//        HStack {
-//            ForEach(imageUrls, id: \.self) { url in
-//                PostImage(imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: url)))
-//            }
-//        }
-//    }
-// }
 
 struct ImagesGrid: View {
     var imageUrls: [String]
@@ -67,7 +57,6 @@ struct PostImage: View {
                     .resizable()
                     .renderingMode(.original)
                     .frame(width: 50, height: 50)
-
             } else {
                 Rectangle()
                     .foregroundColor(.white)

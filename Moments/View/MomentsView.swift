@@ -39,8 +39,11 @@ struct MomentsView: View {
 
                 ForEach(tweets.filter { $0.content != nil || $0.images != nil }) { item in
                     TweetRow(tweet: item)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                 }
+                
             }
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(trailing: cameraButton)
             .background(
@@ -62,6 +65,7 @@ struct MomentsView: View {
                     print(error)
                 }
             }
+            UITableView.appearance().separatorColor = .clear
         }
     }
 }
