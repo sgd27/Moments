@@ -17,12 +17,9 @@ struct ProfileImage: View {
                 Image(uiImage: self.imageLoader.image!)
                     .resizable()
                     .renderingMode(.original)
-                    .frame(height: 200)
-
             } else {
                 Rectangle()
                     .foregroundColor(.white)
-                    .frame(height: 200)
             }
         }
     }

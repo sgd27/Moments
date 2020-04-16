@@ -17,15 +17,12 @@ struct AvatarImage: View {
                 Image(uiImage: self.imageLoader.image!)
                     .resizable()
                     .renderingMode(.original)
-                    .frame(width: 55, height: 55)
-                    .cornerRadius(8)
-
             } else {
                 Rectangle()
                     .foregroundColor(.white)
-                    .frame(width: 55, height: 55)
-                    .cornerRadius(8)
             }
         }
+        .frame(width: 60, height: 60)
+        .cornerRadius(8)
     }
 }

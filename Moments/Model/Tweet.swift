@@ -26,7 +26,8 @@ struct Tweet: Codable, Identifiable {
 
 // MARK: - Comment
 
-struct Comment: Codable {
+struct Comment: Codable, Identifiable {
+    var id: UUID { UUID() }
     let content: String
     let sender: Sender
 }
