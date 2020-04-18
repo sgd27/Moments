@@ -22,5 +22,6 @@ struct ProfileImage: View {
                     .foregroundColor(.white)
             }
         }
+        .frame(height: 300)
     }
 }

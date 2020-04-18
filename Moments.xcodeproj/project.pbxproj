@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F10F015924431A7C0054F14C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F015824431A7C0054F14C /* APIService.swift */; };
 		F166FA30244405F200D5DA87 /* TweetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166FA2F244405F200D5DA87 /* TweetRow.swift */; };
+		F1891A5C244A81CA00383D71 /* RefreshableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A5B244A81CA00383D71 /* RefreshableList.swift */; };
 		F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201442441A2C000251B94 /* AppDelegate.swift */; };
 		F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201462441A2C100251B94 /* SceneDelegate.swift */; };
 		F1A201492441A2C100251B94 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201482441A2C100251B94 /* MomentsView.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		F10F015824431A7C0054F14C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F166FA2F244405F200D5DA87 /* TweetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRow.swift; sourceTree = "<group>"; };
+		F1891A5B244A81CA00383D71 /* RefreshableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableList.swift; sourceTree = "<group>"; };
 		F1A201412441A2C000251B94 /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A201442441A2C000251B94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A201462441A2C100251B94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				F1F5122C2443A6880000CFAF /* NavigationConfigurator.swift */,
+				F1891A5B244A81CA00383D71 /* RefreshableList.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				F10F015924431A7C0054F14C /* APIService.swift in Sources */,
 				F1D98C802443307500CC8CE2 /* Tweet.swift in Sources */,
 				F1D98C7E24432C2C00CC8CE2 /* User.swift in Sources */,
+				F1891A5C244A81CA00383D71 /* RefreshableList.swift in Sources */,
 				F1F5122D2443A6880000CFAF /* NavigationConfigurator.swift in Sources */,
 				F1A201492441A2C100251B94 /* MomentsView.swift in Sources */,
 			);
