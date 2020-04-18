@@ -14,7 +14,7 @@ struct TweetRow: View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 10) {
                 AvatarImage(
-                    imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: tweet.sender!.avatar)))
+                    imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: tweet.sender?.avatar ?? "")))
                 VStack(alignment: .leading, spacing: 10) {
                     Text(tweet.sender?.nick ?? "")
                         .font(.headline)

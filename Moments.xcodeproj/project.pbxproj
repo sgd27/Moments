@@ -10,6 +10,11 @@
 		F10F015924431A7C0054F14C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F015824431A7C0054F14C /* APIService.swift */; };
 		F166FA30244405F200D5DA87 /* TweetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F166FA2F244405F200D5DA87 /* TweetRow.swift */; };
 		F1891A5C244A81CA00383D71 /* RefreshableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A5B244A81CA00383D71 /* RefreshableList.swift */; };
+		F1891A5F244B2C8F00383D71 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A5E244B2C8F00383D71 /* Store.swift */; };
+		F1891A61244B2C9E00383D71 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A60244B2C9E00383D71 /* AppState.swift */; };
+		F1891A63244B2CB300383D71 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A62244B2CB300383D71 /* AppAction.swift */; };
+		F1891A65244B2CCA00383D71 /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A64244B2CCA00383D71 /* AppCommand.swift */; };
+		F1891A67244B2CDD00383D71 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A66244B2CDD00383D71 /* AppError.swift */; };
 		F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201442441A2C000251B94 /* AppDelegate.swift */; };
 		F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201462441A2C100251B94 /* SceneDelegate.swift */; };
 		F1A201492441A2C100251B94 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201482441A2C100251B94 /* MomentsView.swift */; };
@@ -48,6 +53,11 @@
 		F10F015824431A7C0054F14C /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F166FA2F244405F200D5DA87 /* TweetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRow.swift; sourceTree = "<group>"; };
 		F1891A5B244A81CA00383D71 /* RefreshableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableList.swift; sourceTree = "<group>"; };
+		F1891A5E244B2C8F00383D71 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		F1891A60244B2C9E00383D71 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F1891A62244B2CB300383D71 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		F1891A64244B2CCA00383D71 /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
+		F1891A66244B2CDD00383D71 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F1A201412441A2C000251B94 /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A201442441A2C000251B94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A201462441A2C100251B94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +127,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F1891A5D244B2C6600383D71 /* DataFlow */ = {
+			isa = PBXGroup;
+			children = (
+				F1891A5E244B2C8F00383D71 /* Store.swift */,
+				F1891A60244B2C9E00383D71 /* AppState.swift */,
+				F1891A62244B2CB300383D71 /* AppAction.swift */,
+				F1891A64244B2CCA00383D71 /* AppCommand.swift */,
+				F1891A66244B2CDD00383D71 /* AppError.swift */,
+			);
+			path = DataFlow;
+			sourceTree = "<group>";
+		};
 		F1A201382441A2C000251B94 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +162,7 @@
 		F1A201432441A2C000251B94 /* Moments */ = {
 			isa = PBXGroup;
 			children = (
+				F1891A5D244B2C6600383D71 /* DataFlow */,
 				F1F51230244733910000CFAF /* Moments.entitlements */,
 				F1D98C7C24432C1000CC8CE2 /* Model */,
 				F10F01172442002E0054F14C /* View */,
@@ -390,11 +413,16 @@
 			files = (
 				F1F5122A244388F70000CFAF /* ProfileImage.swift in Sources */,
 				F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */,
+				F1891A67244B2CDD00383D71 /* AppError.swift in Sources */,
 				F166FA30244405F200D5DA87 /* TweetRow.swift in Sources */,
 				F1F5122F2443B5CC0000CFAF /* AvatarImage.swift in Sources */,
 				F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */,
 				F1F51227244381730000CFAF /* ImageService.swift in Sources */,
+				F1891A65244B2CCA00383D71 /* AppCommand.swift in Sources */,
+				F1891A61244B2C9E00383D71 /* AppState.swift in Sources */,
 				F1F5122524437CBA0000CFAF /* ImageLoader.swift in Sources */,
+				F1891A5F244B2C8F00383D71 /* Store.swift in Sources */,
+				F1891A63244B2CB300383D71 /* AppAction.swift in Sources */,
 				F10F015924431A7C0054F14C /* APIService.swift in Sources */,
 				F1D98C802443307500CC8CE2 /* Tweet.swift in Sources */,
 				F1D98C7E24432C2C00CC8CE2 /* User.swift in Sources */,

@@ -33,7 +33,7 @@ struct RefreshableList<Content: View>: View {
     }
 
     func refresh(offset: CGFloat) {
-        if offset > 185, showRefreshView == false {
+        if offset > 85, showRefreshView == false {
             showRefreshView = true
             DispatchQueue.main.async {
                 self.action()
