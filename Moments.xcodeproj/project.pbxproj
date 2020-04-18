@@ -15,6 +15,7 @@
 		F1891A63244B2CB300383D71 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A62244B2CB300383D71 /* AppAction.swift */; };
 		F1891A65244B2CCA00383D71 /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A64244B2CCA00383D71 /* AppCommand.swift */; };
 		F1891A67244B2CDD00383D71 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A66244B2CDD00383D71 /* AppError.swift */; };
+		F1891A6C244B6F1A00383D71 /* NetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1891A6B244B6F1A00383D71 /* NetImage.swift */; };
 		F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201442441A2C000251B94 /* AppDelegate.swift */; };
 		F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201462441A2C100251B94 /* SceneDelegate.swift */; };
 		F1A201492441A2C100251B94 /* MomentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A201482441A2C100251B94 /* MomentsView.swift */; };
@@ -27,9 +28,7 @@
 		F1D98C802443307500CC8CE2 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D98C7F2443307500CC8CE2 /* Tweet.swift */; };
 		F1F5122524437CBA0000CFAF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5122424437CBA0000CFAF /* ImageLoader.swift */; };
 		F1F51227244381730000CFAF /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F51226244381730000CFAF /* ImageService.swift */; };
-		F1F5122A244388F70000CFAF /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F51229244388F70000CFAF /* ProfileImage.swift */; };
 		F1F5122D2443A6880000CFAF /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5122C2443A6880000CFAF /* NavigationConfigurator.swift */; };
-		F1F5122F2443B5CC0000CFAF /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5122E2443B5CC0000CFAF /* AvatarImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +57,7 @@
 		F1891A62244B2CB300383D71 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		F1891A64244B2CCA00383D71 /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		F1891A66244B2CDD00383D71 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		F1891A6B244B6F1A00383D71 /* NetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetImage.swift; sourceTree = "<group>"; };
 		F1A201412441A2C000251B94 /* Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A201442441A2C000251B94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A201462441A2C100251B94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +76,7 @@
 		F1D98C7F2443307500CC8CE2 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		F1F5122424437CBA0000CFAF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		F1F51226244381730000CFAF /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		F1F51229244388F70000CFAF /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		F1F5122C2443A6880000CFAF /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
-		F1F5122E2443B5CC0000CFAF /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		F1F51230244733910000CFAF /* Moments.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moments.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,8 +222,7 @@
 		F1F512282443889D0000CFAF /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				F1F51229244388F70000CFAF /* ProfileImage.swift */,
-				F1F5122E2443B5CC0000CFAF /* AvatarImage.swift */,
+				F1891A6B244B6F1A00383D71 /* NetImage.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -411,11 +408,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F5122A244388F70000CFAF /* ProfileImage.swift in Sources */,
 				F1A201452441A2C000251B94 /* AppDelegate.swift in Sources */,
 				F1891A67244B2CDD00383D71 /* AppError.swift in Sources */,
 				F166FA30244405F200D5DA87 /* TweetRow.swift in Sources */,
-				F1F5122F2443B5CC0000CFAF /* AvatarImage.swift in Sources */,
 				F1A201472441A2C100251B94 /* SceneDelegate.swift in Sources */,
 				F1F51227244381730000CFAF /* ImageService.swift in Sources */,
 				F1891A65244B2CCA00383D71 /* AppCommand.swift in Sources */,
@@ -429,6 +424,7 @@
 				F1891A5C244A81CA00383D71 /* RefreshableList.swift in Sources */,
 				F1F5122D2443A6880000CFAF /* NavigationConfigurator.swift in Sources */,
 				F1A201492441A2C100251B94 /* MomentsView.swift in Sources */,
+				F1891A6C244B6F1A00383D71 /* NetImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

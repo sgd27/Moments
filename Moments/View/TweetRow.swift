@@ -13,8 +13,9 @@ struct TweetRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 10) {
-                AvatarImage(
-                    imageLoader: ImageLoaderCache.shared.loaderFor(url: URL(string: tweet.sender?.avatar ?? "")))
+                NetImage(url: URL(string: tweet.sender?.avatar ?? ""))
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(8)
                 VStack(alignment: .leading, spacing: 10) {
                     Text(tweet.sender?.nick ?? "")
                         .font(.headline)
@@ -25,14 +26,17 @@ struct TweetRow: View {
                     ImagesGrid(imageUrls: tweet.images?.map { $0.url } ?? [])
                     HStack {
                         Spacer()
-                        Button(action: {}) {
-                            HStack(spacing: 4) {
-                                Circle().fill(Color("gray_blue", bundle: nil)).frame(width: 4, height: 4)
-                                Circle().fill(Color("gray_blue", bundle: nil)).frame(width: 4, height: 4)
-                            }
-                            .padding(.all, 5)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(2)
+
+                        HStack(spacing: 4) {
+                            Circle().fill(Color("gray_blue", bundle: nil)).frame(width: 4, height: 4)
+                            Circle().fill(Color("gray_blue", bundle: nil)).frame(width: 4, height: 4)
+                        }
+                        .padding(.all, 5)
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(2)
+                        .padding(.trailing, 3)
+                        .onTapGesture {
+                            print("comment")
                         }
                     }
                     if (tweet.comments?.count ?? 0) > 0 {
@@ -42,7 +46,6 @@ struct TweetRow: View {
                 .padding(.leading, 5)
             }
             .padding(.horizontal, 10)
-
             Divider()
         }
         .padding(.top, 16)
@@ -84,40 +87,12 @@ struct ImagesGrid: View {
                     ForEach(
                         (0 ..< (row.id == rowCount - 1 ? count % columnCount : columnCount)).map { Index(id: $0) }
                     ) { column in
-                        PostImage(
-                            imageLoader: ImageLoaderCache.shared.loaderFor(
-                                url: URL(string: self.imageUrls[row.id * columnCount + column.id]))
-                        )
-                        .aspectRatio(aspectRatio, contentMode: .fit)
-                        .frame(maxWidth: maxWidth)
+                        NetImage(url: URL(string: self.imageUrls[row.id * columnCount + column.id]))
+                            .aspectRatio(aspectRatio, contentMode: .fit)
+                            .frame(maxWidth: maxWidth)
                     }
                 }
             }
         }
-    }
-}
-
-struct PostImage: View {
-    @ObservedObject var imageLoader: ImageLoader
-
-    var body: some View {
-        Group {
-            if self.imageLoader.image != nil {
-                Image(uiImage: self.imageLoader.image!)
-                    .resizable()
-                    .renderingMode(.original)
-
-            } else {
-                Rectangle()
-                    .foregroundColor(.white)
-            }
-        }
-        .frame(maxWidth: 200, maxHeight: 200)
-    }
-}
-
-struct TweetRow_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!") /*@END_MENU_TOKEN@*/
     }
 }

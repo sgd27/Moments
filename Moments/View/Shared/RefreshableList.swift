@@ -25,15 +25,17 @@ struct RefreshableList<Content: View>: View {
             self.content()
         }
         .onPreferenceChange(RefreshableKeyTypes.PrefKey.self) { values in
-            guard let bounds = values.first?.bounds else { return }
-            self.pullStatus = CGFloat((bounds.origin.y - 80) / 50)
-            self.refresh(offset: bounds.origin.y)
+            if values.count > 0 {
+                let originY = values.map { $0.bounds.origin.y }.max()!
+                self.pullStatus = CGFloat((originY - 80) / 50)
+                self.refresh(offset: originY)
+            }
         }
         .offset(x: 0, y: -40)
     }
 
     func refresh(offset: CGFloat) {
-        if offset > 85, showRefreshView == false {
+        if offset > 140, showRefreshView == false {
             showRefreshView = true
             DispatchQueue.main.async {
                 self.action()
@@ -80,9 +82,9 @@ struct PullToRefreshView: View {
     var body: some View {
         GeometryReader { geometry in
             RefreshView(isRefresh: self.$showRefreshView, status: self.$pullStatus)
-                .opacity(Double((geometry.frame(in: CoordinateSpace.global).origin.y - 80) / 50))
+                .opacity(Double((geometry.frame(in: .global).origin.y - 80) / 50))
                 .preference(key: RefreshableKeyTypes.PrefKey.self,
-                            value: [RefreshableKeyTypes.PrefData(bounds: geometry.frame(in: CoordinateSpace.global))])
+                            value: [RefreshableKeyTypes.PrefData(bounds: geometry.frame(in: .global))])
                 .offset(x: 0, y: -60)
         }
     }
