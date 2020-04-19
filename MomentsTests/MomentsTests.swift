@@ -6,28 +6,30 @@
 //  Copyright © 2020 施国栋. All rights reserved.
 //
 
+import Foundation
 import XCTest
 
 @testable import Moments
 
 class MomentsTests: XCTestCase {
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
+    func testCallToUser() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        let promise = expectation(description: "Completion handler invoked")
+        var response: User?
+        var apiError: APIService.APIError?
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+        APIService.shared.GET(endpoint: .user, params: nil) { (result: Result<User, APIService.APIError>) in
+            switch result {
+            case let .success(user):
+                response = user
+            case let .failure(error):
+                apiError = error
+            }
+            promise.fulfill()
         }
+        wait(for: [promise], timeout: 5)
+        XCTAssertNotNil(response)
+        XCTAssertNil(apiError)
     }
 }
