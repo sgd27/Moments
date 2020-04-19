@@ -59,17 +59,10 @@ struct MomentsView: View {
                     self.loadMore()
                 }
             }
-//            .edgesIgnoringSafeArea(.top)
+            .edgesIgnoringSafeArea(.all)
             .navigationBarTitle("朋友圈", displayMode: .inline)
             .navigationBarItems(trailing: cameraButton)
-            .background(
-                NavigationConfigurator { navigationController in
-                    let navBar = navigationController.navigationBar
-//                    navBar.standardAppearance.configureWithTransparentBackground()
-                    //                navigationBar.titleTextAttributes = [.foregroundColor: UIColor.]
-            })
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             self.store.dispatch(.loadUser)
             self.store.dispatch(.loadTweets)

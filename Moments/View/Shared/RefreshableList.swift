@@ -10,7 +10,6 @@ import SwiftUI
 
 struct RefreshableList<Content: View>: View {
     @State var showRefreshView: Bool = false
-    @State var pullStatus: CGFloat = 0
     let action: () -> Void
     let content: () -> Content
 
@@ -21,13 +20,12 @@ struct RefreshableList<Content: View>: View {
 
     var body: some View {
         List {
-            PullToRefreshView(showRefreshView: $showRefreshView, pullStatus: $pullStatus)
+            PullToRefreshView()
             self.content()
         }
         .onPreferenceChange(RefreshableKeyTypes.PrefKey.self) { values in
             if values.count > 0 {
                 let originY = values.map { $0.bounds.origin.y }.max()!
-                self.pullStatus = CGFloat((originY - 80) / 50)
                 self.refresh(offset: originY)
             }
         }
@@ -35,7 +33,7 @@ struct RefreshableList<Content: View>: View {
     }
 
     func refresh(offset: CGFloat) {
-        if offset > 140, showRefreshView == false {
+        if offset > 160, showRefreshView == false {
             showRefreshView = true
             DispatchQueue.main.async {
                 self.action()
@@ -48,12 +46,10 @@ struct RefreshableList<Content: View>: View {
 }
 
 struct RefreshView: View {
-    @Binding var isRefresh: Bool
-    @Binding var status: CGFloat
     var body: some View {
         HStack {
             Spacer()
-            Circle().frame(width: 30, height: 30).foregroundColor(.red)
+            ActivityIndicator(isAnimating: .constant(true), style: .medium)
             Spacer()
         }
     }
@@ -70,23 +66,31 @@ struct RefreshableKeyTypes {
                            nextValue: () -> [RefreshableKeyTypes.PrefData]) {
             value.append(contentsOf: nextValue())
         }
-
-//        typealias Value = [PrefData]
     }
 }
 
 struct PullToRefreshView: View {
-    @Binding var showRefreshView: Bool
-    @Binding var pullStatus: CGFloat
-
     var body: some View {
         GeometryReader { geometry in
-            RefreshView(isRefresh: self.$showRefreshView, status: self.$pullStatus)
+            RefreshView()
                 .opacity(Double((geometry.frame(in: .global).origin.y - 80) / 50))
                 .preference(key: RefreshableKeyTypes.PrefKey.self,
                             value: [RefreshableKeyTypes.PrefData(bounds: geometry.frame(in: .global))])
                 .offset(x: 0, y: -60)
         }
+    }
+}
+
+struct ActivityIndicator: UIViewRepresentable {
+    @Binding var isAnimating: Bool
+    let style: UIActivityIndicatorView.Style
+
+    func makeUIView(context _: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
+        UIActivityIndicatorView(style: style)
+    }
+
+    func updateUIView(_ uiView: UIActivityIndicatorView, context _: UIViewRepresentableContext<ActivityIndicator>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }
 
