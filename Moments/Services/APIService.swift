@@ -9,7 +9,7 @@
 import Foundation
 
 public struct APIService {
-    let baseURL = URL(string: "https://thoughtworks-mobile-2018.herokuapp.com")!
+    let baseURL = URL(string: "YOUR URL")!
     public static let shared = APIService()
     let decoder = JSONDecoder()
 
